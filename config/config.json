@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "exampledb",
+    "password": "Ouroboros2$",
+    "database": "live_bigDB",
     "host": "localhost",
     "port": "8889",
     "dialect": "mysql"
