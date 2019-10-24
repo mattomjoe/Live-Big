@@ -1,6 +1,11 @@
 # **__TheyMightBeGiants__**
 Project #2
 
+# **__Group Members__**
+Nicole T
+Matt J
+Antonio
+Adam
 
 # **__What Problem Does The Application Solve?__**  
 
