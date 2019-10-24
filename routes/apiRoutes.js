@@ -1,26 +1,41 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all habits
+  app.get("/api/habits", function(req, res) {
+    db.Habit.findAll({}).then(function(habits) {
+      res.json(habits);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Get all of a particular user's habits
+  app.get("/api/user-habits", function(req, res) {
+    db.User.findAll({
+      include: [
+        {
+          model: db.Habit
+        }
+      ]
+    }).then(function(userHabits) {
+      res.json(userHabits);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
+  // Add a new habit
+  app.post("/api/habits", function(req, res) {
+    db.Habit.create(req.body).then(function(newHabit) {
+      res.json(newHabit);
+    });
+  });
+
+  // Find a habit by id and delete it
+  app.delete("/api/habits/:id", function(req, res) {
+    db.Habit.destroy({ where: { id: req.params.id } }).then(function(
+      doomedHabit
     ) {
-      res.json(dbExample);
+      res.json(doomedHabit);
     });
   });
+
+  //
 };

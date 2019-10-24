@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1, 2]
     },
-    complete: {
+    completed: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Habit.associate = function(models) {
-    postMessage.belongsTo(models.User, {
+    Habit.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
