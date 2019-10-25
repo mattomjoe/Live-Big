@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h1 {
+        background-color: limegreen;
+        height: 30px;
+        text-align: center;
+        /* get giant to move */
+      }
+
+      #giant {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        -webkit-animation: mymove 5s;
+        /* Safari 4.0 - 8.0 */
+        animation: mymove 5s;
+      }
+
+      /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes mymove {
+        0% {
+          left: 0px;
+        }
+
+        10% {
+          left: 150px;
+        }
+
+        20% {
+          left: 250px;
+        }
+
+        30% {
+          left: 400px;
+        }
+
+        40% {
+          left: 500px;
+        }
+
+        50% {
+          left: 600px;
+        }
+
+        60% {
+          left: 800px;
+        }
+
+        70% {
+          left: 1000px;
+        }
+
+        80% {
+          left: 1200px;
+        }
+      }
+
+      /* Standard syntax */
+      @keyframes mymove {
+        0% {
+          left: 0px;
+        }
+
+        10% {
+          left: 150px;
+        }
+
+        20% {
+          left: 250px;
+        }
+
+        30% {
+          left: 400px;
+        }
+
+        40% {
+          left: 500px;
+        }
+
+        50% {
+          left: 600px;
+        }
+
+        60% {
+          left: 800px;
+        }
+
+        70% {
+          left: 1000px;
+        }
+
+        80% {
+          left: 1200px;
+        }
+
+        /* 100% {top: 0px;} */
+        /* 90%  {left: 1200px}
+          100% {left: 0px;} */
+      }
+
+      /* git townspeople to move */
+      #townsPeople {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        float: right;
+        -webkit-animation: ops 5s;
+        /* Safari 4.0 - 8.0 */
+        animation: ops 5s;
+      }
+
+      /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes ops {
+        0% {
+          right: 0px;
+        }
+
+        10% {
+          right: 150px;
+        }
+
+        20% {
+          right: 250px;
+        }
+
+        30% {
+          right: 400px;
+        }
+
+        40% {
+          right: 500px;
+        }
+
+        50% {
+          right: 600px;
+        }
+
+        60% {
+          right: 800px;
+        }
+
+        70% {
+          right: 1000px;
+        }
+
+        80% {
+          right: 1200px;
+        }
+      }
+
+      /* Standard syntax */
+      @keyframes ops {
+        0% {
+          right: 0px;
+        }
+
+        10% {
+          right: 150px;
+        }
+
+        20% {
+          right: 250px;
+        }
+
+        30% {
+          right: 400px;
+        }
+
+        40% {
+          right: 500px;
+        }
+
+        50% {
+          right: 600px;
+        }
+
+        60% {
+          right: 800px;
+        }
+
+        70% {
+          right: 1000px;
+        }
+
+        80% {
+          right: 1200px;
+        }
+      }
+
+      body {
+        background: url(http://clipart-library.com/image_gallery/53697.jpg)
+          no-repeat center center fixed;
+        /* -webkit-background-size: cover; */
+        background-size: cover;
+      }
+
+      #myProgress {
+        width: 100%;
+        background-color: #ddd;
+      }
+
+      #myBar {
+        width: 10%;
+        height: 30px;
+        background-color: #4caf50;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+      }
+
+      #doneList {
+        float: right;
+        border-block-color: limegreen;
+      }
+    </style>
+  </head>
+
+  <body>
+    ​
+    <div class="container">
+      <h1>Fulfill Your Goals and Become a Free Giant</h1>
+      ​
+      <p>Play the animation forwards first, then backwards:</p>
+      <img
+        id="giant"
+        src="http://clipart-library.com/images_k/dallas-cowboys-silhouette/dallas-cowboys-silhouette-18.png"
+        alt="giant"
+      />
+      <img
+        id="townsPeople"
+        src="http://clipart-library.com/img/1560994.png"
+        alt="angry-people"
+      />
+      <p>
+        <strong>Note:</strong> The animation-direction property is not supported
+        in Internet Explorer 9 and earlier versions.
+      </p>
+      ​
+    </div>
+    <!-- progress bar -->
+    <div class="w3-container">
+      <h2>Dynamic Progress Bar with Labels</h2>
+      <p>Centered label:</p>
+
+      <div class="w3-light-grey">
+        <div
+          id="myBar"
+          class="w3-container w3-green w3-center"
+          style="width:20%"
+        >
+          20%
+        </div>
+      </div>
+      <br />
+      <button class="w3-button w3-green" onclick="move()">Click Me</button>
+    </div>
+    <!-- javascript for movement of the progress bar -->
+
+    <script>
+      function move() {
+        var elem = document.getElementById("myBar");
+        var width = 0;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+          } else {
+            width++;
+            elem.style.width = width + "%";
+            elem.innerHTML = width * 1 + "%";
+          }
+        }
+      }
+    </script>
+
+    <!-- <div class="colTable">
+        <div class="row">
+          <div class="col align-self-start">
+            One of three columns
+          </div>
+          <div class="col align-self-center">
+            <img src= "http://clipart-library.com/image_gallery/449433.png">
+          </div>
+          <div class="col align-self-end">
+            One of three columns
+          </div>
+        </div>
+      </div>
+    <div>
+        <section class="col-md-6">
+            <div>
+                <h2 class="hStuff">Goals Selected</h2>
+                <div class="lists" style="max-height: 500px;">
+                    <ul class="notStyled" id="goallist">
+                       goal from goals input page go here-->
+    <!-- </ul>
+                    <div style="height: 20px;"></div>
+                </div>
+            </div>
+        </section>
+        <div class ="row" img src= "http://clipart-library.com/image_gallery/449433.png" alt="road"></div>
+        User completes goals here. -->
+    <!-- <section class="col-md-6">
+            <div>
+                <h2 class="hStuff">Goals Completed</h2>
+                <div class="lists" style="max-height: 500px;">
+                    <ul class="notStyled" id="doneList">
+                        completed goals go here -->
+    <!-- </ul>
+                </div>
+                <div style="height: 20px;"></div>
+            </div> -->
+    <!-- </section> 
+    </div>  -->
+    <!-- use this if we decide on handlebars. Determine if two rows or auto wrap needed -->
+    <!-- <li class="" data-id="{{id}}">
+        {{}}
+
+        {{#unless}}
+        <button class="bg-primary border-primary text-white rounded ml-1 p-1">
+            Done!
+        </button>
+        {{/unless}}
+    </li>
+    </div> -->
+  </body>
+</html>
