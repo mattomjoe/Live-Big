@@ -8,19 +8,6 @@ module.exports = function(app) {
     });
   });
 
-  // Get all of a particular user's habits
-  app.get("/api/user-habits", function(req, res) {
-    db.User.findAll({
-      include: [
-        {
-          model: db.Habit
-        }
-      ]
-    }).then(function(userHabits) {
-      res.json(userHabits);
-    });
-  });
-
   // Add a new habit
   app.post("/api/habits", function(req, res) {
     db.Habit.create(req.body).then(function(newHabit) {
@@ -28,7 +15,7 @@ module.exports = function(app) {
     });
   });
 
-  // Find a habit by id and delete it
+  // Delete a habit with a particular id
   app.delete("/api/habits/:id", function(req, res) {
     db.Habit.destroy({ where: { id: req.params.id } }).then(function(
       doomedHabit
@@ -36,6 +23,4 @@ module.exports = function(app) {
       res.json(doomedHabit);
     });
   });
-
-  //
 };
