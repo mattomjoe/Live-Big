@@ -3,9 +3,13 @@ Project #2
 
 # **__Group Members__**
 Nicole T
+<br>
 Matt J
+<br>
 Antonio
+<br>
 Adam
+<br>
 
 # **__What Problem Does The Application Solve?__**  
 
