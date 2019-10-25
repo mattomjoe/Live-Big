@@ -1,9 +1,18 @@
 # **__TheyMightBeGiants__**
 Project #2
 
+# **__Group Members__**
+Nicole T
+<br>
+Matt J
+<br>
+Antonio
+<br>
+Adam
+<br>
 
 # **__What Problem Does The Application Solve?__**  
-
+Live Big is an app that lets you track your daily habits and allows the user to create new habits that they would like to accomplish to enhance their daily lifestyle.
 
 # **__What Is The App Doing And Why?__** 
 
@@ -44,3 +53,7 @@ Node.js:
 * Heroku
 
 # **__Each Team Members Role In The App Development__**
+* Nicole - Front end
+* Adam - Front end
+* Matt - Back end
+* Antonio - Back end
