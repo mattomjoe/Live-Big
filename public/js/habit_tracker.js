@@ -1,11 +1,18 @@
 $(document).ready(function() {
   var currentUserId = 1;
 
-  $(document).on("click", "#search", function(event) {
+  $(document).on("click", "#add", function(event) {
     event.preventDefault();
+
+    alert("I like the cheese.");
+
+    console.log("I like the cheese.");
 
     var newHabit = {
       habitName: $("#Activity")
+        .val()
+        .trim(),
+      perWeek: $("#Times")
         .val()
         .trim(),
       completed: 0,
@@ -21,15 +28,21 @@ $(document).ready(function() {
       window.location.reload();
     });
   });
-});
 
-$(document).on("click", ".completeActivity", function(event) {
-  var id = $(this)
-    .parent()
-    .data("id");
+  $(document).on("click", ".completeActivity", function(event) {
+    var id = $(this)
+      .parent()
+      .data("id");
 
-  $.ajax("api/habits/" + id, {
-    type: "PUT",
-    data: { completed: 1 }
+    $.ajax("api/habits/" + id, {
+      type: "PUT",
+      data: { completed: 1 }
+    });
+  });
+
+  $("#Activity, #Times").keyup(function(event) {
+    if (event.keyCode === 13) {
+      $("#add").click();
+    }
   });
 });
