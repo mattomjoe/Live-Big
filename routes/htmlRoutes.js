@@ -3,6 +3,9 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
+    console.log("---------Serving up root from htmlRoutes.js");
+    //console.log("----------Hey is this you my dude?: ",req.userContext.userinfo);
+
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
