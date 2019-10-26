@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "live_bigDB",
     "host": "localhost",
     "port": "3306",
@@ -19,7 +19,7 @@
   },
   "ci": {
     "username": "root",
-    "password": "Ouroboros2$",
+    "password": "root",
     "database": "testdb",
     "host": "127.0.0.1",
     "socketPath": "~travis/.my.cnf",
