@@ -30,6 +30,6 @@ $(document).on("click", ".completeActivity", function(event) {
 
   $.ajax("api/habits/" + id, {
     type: "PUT",
-    data: {}
+    data: { completed: 1 }
   });
 });
