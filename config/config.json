@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Zoey@1203",
-    "database": "giant_db",
+    "password": "root",
+    "database": "live_bigDB",
     "host": "localhost",
     "port": "3306",
     "dialect": "mysql"
@@ -12,7 +12,7 @@
     "password": "root",
     "database": "testdb",
     "host": "127.0.0.1",
-    "port": "8889",
+    "port": "3306",
     "socketPath": "~travis/.my.cnf",
     "dialect": "mysql",
     "logging": false

@@ -14,7 +14,8 @@ app.set("view engine", "handlebars");
 // Middleware
 app.use(express.urlencoded({ extended: false })); // app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public")); // app.use('/static', express.static('public'));
+app.use(express.static("public"));
+// app.use('/static', express.static('public'));
 
 // Auth middleware
 app.use(
@@ -49,8 +50,10 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+//require("./routes/")(app);
+require("./routes/htmlRoutes.js")(app);
+require("./routes/userApiRoutes.js")(app);
+require("./routes/habitApiRoutes.js")(app);
 
 var syncOptions = { force: false };
 
@@ -82,7 +85,6 @@ db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
       PORT
     );
   });
