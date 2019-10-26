@@ -15,6 +15,15 @@ module.exports = function(app) {
     });
   });
 
+  app.put("/api/habits:id", function(req, res) {
+    db.Habit.update(
+      { completed: req.body.completed },
+      { where: req.params.id }
+    ).then(function(rowUpdated) {
+      res.json(rowUpdated);
+    });
+  });
+
   // Delete a habit with a particular id
   app.delete("/api/habits/:id", function(req, res) {
     db.Habit.destroy({ where: { id: req.params.id } }).then(function(
