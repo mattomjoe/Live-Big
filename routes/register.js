@@ -10,6 +10,7 @@ const client = new okta.Client({
 
 // Take the user to the homepage if they're already logged in
 router.use("/", (req, res, next) => {
+  //console.log("Hey is this you my dude?: ",req.userContext.userinfo);
   if (req.userContext) {
     return res.redirect("/");
   }
@@ -25,6 +26,10 @@ const fields = [
 ];
 
 router.get("/", (req, res) => {
+  console.log(
+    "----------------Hey is this you my dude?: ",
+    req.userContext.userinfo
+  );
   res.render("register", { fields });
 });
 
