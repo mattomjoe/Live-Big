@@ -6,6 +6,8 @@ $(document).ready(function() {
   $(document).on("click", "#add", function(event) {
     event.preventDefault();
 
+    alert("wee");
+
     var newHabit = {
       habitName: $("#Activity")
         .val()
@@ -24,6 +26,22 @@ $(document).ready(function() {
     $.post("/api/habits", newHabit).then(function() {
       console.log("Created new habit.");
 
+      window.location.reload();
+    });
+  });
+
+  $(document).on("click", ".deleteHabit", function(event) {
+    var habitId = $(this)
+      .parent()
+      .parent()
+      .data("id");
+
+    console.log("Habit id is " + habitId);
+
+    $.ajax({
+      method: "DELETE",
+      url: "/api/habits/" + habitId
+    }).then(function() {
       window.location.reload();
     });
   });

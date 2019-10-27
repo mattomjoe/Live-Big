@@ -15,29 +15,6 @@ module.exports = function(app) {
     });
   });
 
-  /*app.get("/api/users/:id", function(req, res) {
-    db.User.findAll({
-      where: { id: req.params.id },
-      include: [
-        {
-          model: db.Habit
-        }
-      ]
-    }).then(function(userHabits) {
-      res.json(userHabits);
-    });
-  });*/
-
-  /*router.get("/", function (req, res) {
-    burger.getBurgers(function (data) {
-        var hbsObject = {
-            burgers: data
-        };
-
-        res.render("index", hbsObject);
-    });
-});*/
-
   app.get("/habits", function(req, res) {
     db.User.findAll({}).then(function(userHabits) {
       res.render("habits", {
