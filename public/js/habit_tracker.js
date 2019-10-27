@@ -4,10 +4,6 @@ $(document).ready(function() {
   $(document).on("click", "#add", function(event) {
     event.preventDefault();
 
-    alert("I like the cheese.");
-
-    console.log("I like the cheese.");
-
     var newHabit = {
       habitName: $("#Activity")
         .val()
@@ -19,17 +15,18 @@ $(document).ready(function() {
       UserId: currentUserId
     };
 
-    $.ajax("api/habits", {
-      type: "POST",
-      data: newHabit
-    }).then(function() {
+    // The following line of code creates dummy data
+    // for the purposes of testing without actual users:
+    //$.post("/api/users", {userName: "Steve"});
+
+    $.post("/api/habits", newHabit).then(function() {
       console.log("Created new habit.");
 
       window.location.reload();
     });
   });
 
-  $(document).on("click", ".completeActivity", function(event) {
+  $(document).on("click", ".tablinks", function(event) {
     var id = $(this)
       .parent()
       .data("id");
@@ -38,6 +35,8 @@ $(document).ready(function() {
       type: "PUT",
       data: { completed: 1 }
     });
+
+    window.location.reload();
   });
 
   $("#Activity, #Times").keyup(function(event) {
