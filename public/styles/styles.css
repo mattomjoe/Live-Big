@@ -20,3 +20,7 @@ body {
   height: 80px;
   background: #363636;
 }
+
+.goalHeading {
+  font-weight: bolder !important;
+}
