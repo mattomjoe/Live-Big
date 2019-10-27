@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   // Get all of a particular user's habits
   app.get("/api/users/:id", function(req, res) {
-    db.User.findAll({
+    db.User.findOne({
       where: { id: req.params.id },
       include: [
         {
