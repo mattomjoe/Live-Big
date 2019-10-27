@@ -21,22 +21,17 @@
             <thead>
                 <tr>
                     <th>Activity</th>
-                    <th>Times per week</th>
+                    <th>Times per Week</th>
+                    <th class="text-center">Delete</th>
             </thead>
             <tbody id="habits">
                 {{#each habits}}
-                <tr>
+                <tr data-id="{{id}}">
                     <td>{{habitName}}</td>
                     <td>{{perWeek}}</td>
+                    <td class="text-center"><button class="deleteHabit">X</button></td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
     </div>
-
-
-    <footer id="sticky-footer" class="py-4 bg-white text-black-50">
-        <div class="container text-center">
-            <small>Copyright © 2019 They Might be Giants</small>
-        </div>
-    </footer>
