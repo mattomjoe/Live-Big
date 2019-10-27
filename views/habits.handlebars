@@ -24,6 +24,12 @@
                     <th>Times per week</th>
             </thead>
             <tbody id="habits">
+                {{#each habits}}
+                <tr>
+                    <td>{{habitName}}</td>
+                    <td>{{perWeek}}</td>
+                </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>

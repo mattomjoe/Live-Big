@@ -28,15 +28,25 @@ module.exports = function(app) {
     });
   });*/
 
+  /*router.get("/", function (req, res) {
+    burger.getBurgers(function (data) {
+        var hbsObject = {
+            burgers: data
+        };
+
+        res.render("index", hbsObject);
+    });
+});*/
+
   app.get("/habits", function(req, res) {
     db.User.findAll({}).then(function(userHabits) {
       res.render("habits", {
-        habits: userHabits
+        userHabits: userHabits
       });
     });
   });
 
-  app.get("/habits/:id", function(req, res) {
+  app.get("/start/:id", function(req, res) {
     db.User.findAll({
       where: { id: req.params.id },
       include: [
@@ -46,8 +56,27 @@ module.exports = function(app) {
       ]
     }).then(function(userHabits) {
       res.render("habits", {
-        habits: userHabits
+        habits: userHabits[0].Habits
       });
+
+      console.log(userHabits[0].Habits);
+    });
+  });
+
+  app.get("/goals/:id", function(req, res) {
+    db.User.findAll({
+      where: { id: req.params.id },
+      include: [
+        {
+          model: db.Habit
+        }
+      ]
+    }).then(function(userHabits) {
+      res.render("Edith", {
+        habits: userHabits[0].Habits
+      });
+
+      console.log(userHabits[0].Habits);
     });
   });
 
