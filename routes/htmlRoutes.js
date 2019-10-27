@@ -3,36 +3,17 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
+    console.log("AAAAA", req);
+    console.log("---------Serving up root from htmlRoutes.js");
+    //console.log("----------Hey is this you my dude?: ",req.userContext.userinfo);
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: dbExamples,
+        userContext: req.userContext
       });
     });
   });
-
-  /*app.get("/api/users/:id", function(req, res) {
-    db.User.findAll({
-      where: { id: req.params.id },
-      include: [
-        {
-          model: db.Habit
-        }
-      ]
-    }).then(function(userHabits) {
-      res.json(userHabits);
-    });
-  });*/
-
-  /*router.get("/", function (req, res) {
-    burger.getBurgers(function (data) {
-        var hbsObject = {
-            burgers: data
-        };
-
-        res.render("index", hbsObject);
-    });
-});*/
 
   app.get("/habits", function(req, res) {
     db.User.findAll({}).then(function(userHabits) {
