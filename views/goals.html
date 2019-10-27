@@ -17,7 +17,7 @@
 
     <!-- Goal setting -->
   <div id="header" style="background-color: rgb(57, 68, 219);">
-    <div id="headerArea" class="navbar align-items-end pt-4" style="background-color:forestgreen;">
+    <div id="headerArea" class="navbar align-items-end pt-4" style="background-color:green;">
       <div id="goal-div">
         <h1 id="goals" class="pt-4 mb-0 pl-5 ml-5">Set your goals</h1>
       </div>
@@ -42,12 +42,33 @@
     </tbody>
   </table>
 </div>
+    <!-- ****************** nat added div for API******************************** -->
 
+    <div id="GIFArea"></div>
+    <script type="text/javascript">
 
+        $('button').on("click", function () {
+            var x = $(this).data("search")
+
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + x + "&api_key=jk92ejWlxe2OrTcIMoR8D5thfcuJyakh&limit=1";
+            $.ajax({ url: queryURL, method: 'GET' })
+                .done(function (response) {
+                    console.log(response);
+                    for (   var i = 0; i < response.data.length; i++) {
+                        var newdiv = $("<div style='display:inline-block; margin-right: 10px; '>");
+                        $(newdiv).prepend("<img src='" + response.data[i].images.fixed_height.url + "'>");
+                        $("#entertainer-view").prepend(newdiv);
+                    }
+                })
+        })
+    </script>
+
+    </div>
 <footer id="sticky-footer" class="py-4 bg-white text-black-50">
     <div class="container text-center">
       <small>Copyright © 2019 They Might be Giants</small>
     </div>
+
 </footer>
 
 </body>
