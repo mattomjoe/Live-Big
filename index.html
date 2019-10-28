@@ -20,7 +20,6 @@
             background-size: cover;
         }
 
-        
         * {
             box-sizing: border-box
         }
@@ -63,93 +62,10 @@
             float: left;
             padding: 0px 12px;
             border: 1px solid #ccc;
-            width: 70%;
+            width: 20%;
             border-left: none;
-            height: 300px;
+            height: 100px;
         }
-
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-            background-color: #ddd;
-        }
-
-        /* Create an active/current tablink class */
-        .tab button.active {
-            background-color: #ccc;
-        }
-
-        /* Style the tab content */
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-        }
-         /* second tab */
-         /* Style the tab */
-        .tab {
-            float: left;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
-            width: 30%;
-            height: 300px;
-        }
-
-        /* Style the buttons that are used to open the tab content */
-        .tab button {
-            display: block;
-            background-color: inherit;
-            color: black;
-            padding: 22px 16px;
-            width: 100%;
-            border: none;
-            outline: none;
-            text-align: left;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-            background-color: #ddd;
-        }
-
-        /* Create an active/current "tab button" class */
-        .tab button.active {
-            background-color: #ccc;
-        }
-
-        /* Style the tab content */
-        .tabcontent {
-            float: left;
-            padding: 0px 12px;
-            border: 1px solid #ccc;
-            width: 70%;
-            border-left: none;
-            height: 300px;
-        }
-
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-            background-color: #ddd;
-        }
-
-        /* Create an active/current tablink class */
-        .tab button.active {
-            background-color: #ccc;
-        }
-
-        /* Style the tab content */
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-        }
-
-
- 
-        
     </style>
 </head>
 
@@ -165,60 +81,59 @@
             versions.</p>
         ​
     </div> -->
-   
-    <div>
-        <h2>Tabs</h2>
-        <p>Click on the buttons inside the tabbed menu for completed activities:</p>
 
-        <div class="tab">
-            <button class="tablinks" onclick="goalsMade(event, 'Swim')">Swim</button>
-            <button class="tablinks" onclick="goalsMade(event, 'Clean')">Clean</button>
-            <button class="tablinks" onclick="goalsMade(event, 'Journal')">Journal</button>
-        </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Tabs</h2>
+            <p>Click on the buttons inside the tabbed menu for completed activities:</p>
 
-        <div id="Swim" class="tabcontent">
-            <h3>tab header</h3>
-            <p>tab information</p>
-        </div>
+            <div class="tab">
+                <button class="tablinks" onclick="goalsMade(event, 'Swim')">Swim</button>
+                <button class="tablinks" onclick="goalsMade(event, 'Clean')">Clean</button>
+                <button class="tablinks" onclick="goalsMade(event, 'Journal')">Journal</button>
+            </div>
 
-        <div id="Clean" class="tabcontent">
-            <h3>tab header</h3>
-            <p>tab information</p>
-        </div>
+            <div id="Swim" class="tabcontent">
+                <h3>tab header</h3>
+                <p>tab information</p>
+            </div>
 
-        <div id="Journal" class="tabcontent">
-            <h3>tab header</h3>
-            <p>tab information</p>
+            <div id="Clean" class="tabcontent">
+                <h3>tab header</h3>
+                <p>tab information</p>
+            </div>
+
+            <div id="Journal" class="tabcontent">
+                <h3>tab header</h3>
+                <p>tab information</p>
+            </div>
         </div>
         <!-- ***************************************SECOND group oF TABS*************************************** -->
-            <div>
-                <h2>Tabs</h2>
-                <p>Click on the buttons inside the tabbed menu for completed activities:</p>
-        
-                <div class="tab">
-                    <button class="tablinks" onclick="goalsMade(event, 'Swim')">Swim</button>
-                    <button class="tablinks" onclick="goalsMade(event, 'Clean')">Clean</button>
-                    <button class="tablinks" onclick="goalsMade(event, 'Journal')">Journal</button>
-                </div>
-        
-                <div id="Swim" class="tabcontent">
-                    <h3>tab header</h3>
-                    <p>tab information</p>
-                </div>
-        
-                <div id="Clean" class="tabcontent">
-                    <h3>tab header</h3>
-                    <p>tab information</p>
-                </div>
-        
-                <div id="Journal" class="tabcontent">
-                    <h3>tab header</h3>
-                    <p>tab information</p>
-                </div>
-                <div>
-                    <h2>Tabs</h2>
-                    <p>Click on the buttons inside the tabbed menu for completed activities:</p>
-                   <!-- javascript for movement of the progress bar -->
+        <div class="col-md-6">
+            <h2>Tabs</h2>
+            <p>Click on the buttons inside the tabbed menu for completed activities:</p>
+
+            <div class="tab">
+                <button class="tablinks" onclick="goalsMade(event, 'Swim')">Swim</button>
+                <button class="tablinks" onclick="goalsMade(event, 'Clean')">Clean</button>
+                <button class="tablinks" onclick="goalsMade(event, 'Journal')">Journal</button>
+            </div>
+
+            <div id="Swim" class="tabcontent">
+                <h3>tab header</h3>
+                <p>tab information</p>
+            </div>
+
+            <div id="Clean" class="tabcontent">
+                <h3>tab header</h3>
+                <p>tab information</p>
+            </div>
+
+            <div id="Journal" class="tabcontent">
+                <h3>tab header</h3>
+                <p>tab information</p>
+            </div>
+        </div>
 
         <script>
             // function move() {
