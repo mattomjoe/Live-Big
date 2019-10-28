@@ -1,3 +1,26 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+html,
+body {
+  height: 100%;
+}
+
+#notFooter {
+  min-height: 100%;
+  margin-bottom: -200px;
+}
+
+.push {
+  height: 200px;
+}
+
+#sticky-footer {
+  height: 80px;
+  background: #363636;
+}
+
+.goalHeading {
+  font-weight: bolder !important;
+}
