@@ -1,5 +1,40 @@
 var db = require("../models");
 
+function logUserIn(userName) {
+  /*app.get("/api/users/:id", function(req, res) {
+    db.User.findOne({
+      where: { id: req.params.id },
+      include: [
+        {
+          model: db.Habit
+        }
+      ]
+    }).then(function(userHabits) {
+      res.json(userHabits);
+    });
+  });*/
+
+  $.get("/api/users", function(data) {
+    var existingUserId = NaN;
+
+    for (var i = 0; i < data.length; i++) {
+      if (userName === data[i].userName) {
+        existingUserId = data[i].id;
+
+        break;
+      }
+    }
+
+    if (!isNaN(existingUserId)) {
+      return existingUserId;
+    } else {
+      // post route
+
+      logUserIn(userName);
+    }
+  });
+}
+
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -13,6 +48,8 @@ module.exports = function(app) {
         userContext: req.userContext
       });
     });
+
+    //logUserIn(req.userContext.userinfo.sub);
   });
 
   app.get("/habits", function(req, res) {

@@ -4,11 +4,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    perWeek: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      len: [1, 2]
-    },
     completed: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

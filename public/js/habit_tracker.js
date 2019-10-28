@@ -6,13 +6,8 @@ $(document).ready(function() {
   $(document).on("click", "#add", function(event) {
     event.preventDefault();
 
-    alert("wee");
-
     var newHabit = {
       habitName: $("#Activity")
-        .val()
-        .trim(),
-      perWeek: $("#Times")
         .val()
         .trim(),
       completed: 0,
