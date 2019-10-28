@@ -183,7 +183,7 @@
             </div>
     
             <div id="Clean" class="tabcontent2">
-                <h3>tab header</h3>
+                <h3>tab header</h3>git
                 <p>tab information</p>
             </div>
     
@@ -195,33 +195,33 @@
        <!-- javascript for movement of the progress bar -->
 
         <script>
-            function move() {
-                var elem = document.getElementById("myBar");
-                var width = 0;
-                var id = setInterval(frame, 10);
-                function frame() {
-                    if (width >= 100) {
-                        clearInterval(id);
-                    } else {
-                        width++;
-                        elem.style.width = width + '%';
-                        elem.innerHTML = width * 1 + '%';
-                    }
-                }
-            }
-            function goalsMade(evt, goalName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(goalName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
+            // function move() {
+            //     var elem = document.getElementById("myBar");
+            //     var width = 0;
+            //     var id = setInterval(frame, 10);
+            //     function frame() {
+            //         if (width >= 100) {
+            //             clearInterval(id);
+            //         } else {
+            //             width++;
+            //             elem.style.width = width + '%';
+            //             elem.innerHTML = width * 1 + '%';
+            //         }
+            //     }
+            // }
+            // // function goalsMade(evt, goalName) {
+            //     var i, tabcontent, tablinks;
+            //     tabcontent = document.getElementsByClassName("tabcontent");
+            //     for (i = 0; i < tabcontent.length; i++) {
+            //         tabcontent[i].style.display = "none";
+            //     }
+            //     tablinks = document.getElementsByClassName("tablinks");
+            //     for (i = 0; i < tablinks.length; i++) {
+            //         tablinks[i].className = tablinks[i].className.replace(" active", "");
+            //     }
+            //     document.getElementById(goalName).style.display = "block";
+            //     evt.currentTarget.className += " active";
+            // }
         </script>
 
 
