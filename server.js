@@ -27,12 +27,14 @@ app.use(
   })
 );
 
+var appURL = "https://theymightbegiants.herokuapp.com/";
+
 const { ExpressOIDC } = require("@okta/oidc-middleware");
 const oidc = new ExpressOIDC({
-  issuer: `${process.env.OKTA_ORG_URL}/oauth2/default`,
-  client_id: process.env.OKTA_CLIENT_ID,
-  client_secret: process.env.OKTA_CLIENT_SECRET,
-  redirect_uri: `${process.env.HOST_URL}/authorization-code/callback`,
+  issuer: `${process.env.OKTA_CLIENT_ORGURL}/oauth2/default`,
+  client_id: process.env.OKTA_OAUTH2_CLIENT_ID_WEB,
+  client_secret: process.env.OKTA_OAUTH2_CLIENT_SECRET_WEB,
+  redirect_uri: `https://theymightbegiants.herokuapp.com/authorization-code/callback`,
   scope: "openid profile"
 });
 
@@ -62,11 +64,13 @@ var syncOptions = { force: false };
 app.get("/logout", (req, res) => {
   if (req.userContext) {
     const idToken = req.userContext.tokens.id_token;
-    const to = encodeURI(process.env.HOST_URL);
+    const to = encodeURI(
+      `${process.env}https://theymightbegiants.herokuapp.com/`
+    );
     const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
     req.logout();
     res.redirect(
-      `${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}`
+      `${process.env.OKTA_CLIENT_ORGURL}/oauth2/default/v1/logout?${params}`
     );
   } else {
     res.redirect("/");
