@@ -15,15 +15,27 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/habits:id", function(req, res) {
+  app.put("/api/habits/:id", function(req, res) {
+    console.log("Deleting " + req.params.id);
+    console.log("Setting completed to " + req.body.completed);
     db.Habit.update(
       { completed: req.body.completed },
-      { where: req.params.id }
+      {
+        where: {
+          id: req.params.id
+        }
+      }
     ).then(function(rowUpdated) {
       res.json(rowUpdated);
     });
   });
+  /*Customer.update( { firstname: firstname, lastname: lastname, age: age }, 
+    { where: {id: customerId} }
+    ).then(() => {
+    res.status(200).send("updated successfully a customer with id = " + id);
+    });*/
 
+  //app.put('/api/customers/:customerId', customers.update);
   // Delete a habit with a particular id
   app.delete("/api/habits/:id", function(req, res) {
     db.Habit.destroy({ where: { id: req.params.id } }).then(function(

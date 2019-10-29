@@ -1,16 +1,49 @@
-<table class="table">
+<div class="row">
+    <div class="col-md-5">
+        <table class="table">
+
             <thead>
                 <tr>
-                    <th class="text-left">Activity</th>
-                    <th class="text-center">Complete</th>
+                    <th class="text-left">Incomplete</th>
+                    <th class="text-center">Complete It!</th>
+                </tr>
             </thead>
 
             <tbody id="habits">
                 {{#each habits}}
+                {{#unless completed}}
                 <tr data-id="{{id}}">
                     <td class="text-left">{{habitName}}</td>
-                    <td><button class="completeHabit">Complete</button></td>
+                    <td class="text-center"><button class="completeHabit">Complete</button></td>
                 </tr>
+                {{/unless}}
                 {{/each}}
+
             </tbody>
         </table>
+    </div>
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-5">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th class="text-left">Complete</th>
+                </tr>
+            </thead>
+
+            <tbody id="habits">
+                {{#each habits}}
+                {{#if completed}}
+                <tr data-id="{{id}}">
+                    <td class="text-left">{{habitName}}</td>
+                </tr>
+                {{/if}}
+                {{/each}}
+
+            </tbody>
+        </table>
+    </div>
+</div>
