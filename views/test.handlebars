@@ -1,0 +1,16 @@
+<table class="table">
+            <thead>
+                <tr>
+                    <th class="text-left">Activity</th>
+                    <th class="text-center">Complete</th>
+            </thead>
+
+            <tbody id="habits">
+                {{#each habits}}
+                <tr data-id="{{id}}">
+                    <td class="text-left">{{habitName}}</td>
+                    <td><button class="completeHabit">Complete</button></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
