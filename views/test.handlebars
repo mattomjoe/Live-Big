@@ -27,20 +27,15 @@
             </thead>
 
             <tbody id="habits">
-                <tr>
-                    <td class="text-left">Lift</td>
+                {{#each habits}}
+                {{#unless completed}}
+                <tr data-id="{{id}}">
+                    <td class="text-left">{{habitName}}</td>
                     <td class="text-center"><button class="completeHabit">Complete</button></td>
                 </tr>
+                {{/unless}}
+                {{/each}}
 
-                <tr>
-                    <td class="text-left">Do Yoga</td>
-                    <td class="text-center"><button class="completeHabit">Complete</button></td>
-                </tr>
-
-                <tr>
-                    <td class="text-left">Meditate</td>
-                    <td class="text-center"><button class="completeHabit">Complete</button></td>
-                </tr>
             </tbody>
         </table>
     </div>
@@ -57,17 +52,14 @@
             </thead>
 
             <tbody id="habits">
-                <tr>
-                    <td class="text-left">Run</td>
+                {{#each habits}}
+                {{#if completed}}
+                <tr data-id="{{id}}">
+                    <td class="text-left">{{habitName}}</td>
                 </tr>
+                {{/if}}
+                {{/each}}
 
-                <tr>
-                    <td class="text-left">Wash Dishes</td>
-                </tr>
-
-                <tr>
-                    <td class="text-left">Shovel</td>
-                </tr>
             </tbody>
         </table>
     </div>
