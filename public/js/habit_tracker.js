@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Delete this once data is being dynamically
   // added to the "users" table:
   var currentUserId = 1;
-
+  $.post("/api/users", { userName: "Steve" });
   $(document).on("click", "#add", function(event) {
     event.preventDefault();
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
       data: { completed: 1 }
     });
 
-    //window.location.reload();
+    window.location.reload();
   });
 
   $("#Activity, #Times").keyup(function(event) {
