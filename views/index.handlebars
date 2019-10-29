@@ -1,8 +1,23 @@
 {{#if userContext}}
-  <h1 class="text-center">Hi {{userContext.userinfo.given_name}}!</h1>
-  <div class="d-flex justify-content-center">
-    <img class="rounded img-fluid" src="/static/images/greeting.jpg" />
+  
+  <div class="container">
+    <img src="images/mountain-top.jpg" alt="Snow" style="max-width:100%;">
+    <div class="centered">
+    <h2 class="text-center">Welcome {{userContext.userinfo.given_name}}!</h2>
+    <h2>What would you like to do?</h2>
+    <br>
+      <button class="create-button">Create a goal</button>
+      <br>
+      <br>
+      <button class="review-button">Review my goals</button>
+    </div>
   </div>
 {{else}}
-  <h1 class="text-center">Please log in</h1>
+  <div class="container">
+  <img src="images/mountain-top.jpg" alt="Snow" style="width:100%;">
+  <div class="centered">
+  	<h1>It's Time to Live Big!</h1>
+    <h3>Please sign in!</h3>
+   </div>
+</div>
 {{/if}}
