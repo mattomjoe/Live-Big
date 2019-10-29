@@ -4,8 +4,8 @@ const express = require("express");
 const router = express.Router();
 
 const client = new okta.Client({
-  orgUrl: process.env.OKTA_ORG_URL,
-  token: process.env.OKTA_TOKEN
+  orgUrl: process.env.OKTA_CLIENT_ORGURL,
+  token: process.env.OKTA_CLIENT_TOKEN
 });
 
 // Take the user to the homepage if they're already logged in
