@@ -71,3 +71,6 @@ body {
   margin: 4px 2px;
   cursor: pointer;
 }
+.container {
+  background-image: url("public/images/mountain-top-1.jpg");
+}
