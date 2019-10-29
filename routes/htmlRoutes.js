@@ -75,7 +75,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/start/:id", function(req, res) {
+  app.get("/create/:id", function(req, res) {
     db.User.findAll({
       where: { id: req.params.id },
       include: [
@@ -92,7 +92,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/goals/:id", function(req, res) {
+  /*app.get("/goals/:id", function(req, res) {
     db.User.findAll({
       where: { id: req.params.id },
       include: [
@@ -107,9 +107,9 @@ module.exports = function(app) {
 
       console.log(userHabits[0].Habits);
     });
-  });
+  });*/
 
-  app.get("/test/:id", function(req, res) {
+  app.get("/review/:id", function(req, res) {
     db.User.findAll({
       where: { id: req.params.id },
       include: [
@@ -123,6 +123,14 @@ module.exports = function(app) {
       });
 
       console.log(userHabits[0].Habits);
+    });
+  });
+
+  app.get("/test", function(req, res) {
+    db.User.findAll({}).then(function(userHabits) {
+      res.render("test", {
+        userHabits: userHabits
+      });
     });
   });
 

@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Delete this once data is being dynamically
   // added to the "users" table:
   var currentUserId = 1;
-  $.post("/api/users", { userName: "Steve" });
+  //$.post("/api/users", { userName: "Steve" });
   $(document).on("click", "#add", function(event) {
     event.preventDefault();
 
@@ -56,6 +56,13 @@ $(document).ready(function() {
     });
 
     window.location.reload();
+  });
+
+  $(document).on("click", ".habitsEntered", function(event) {
+    console.log("wee");
+    if (!isNaN(currentUserId)) {
+      window.location.href = "/test/" + currentUserId;
+    }
   });
 
   $("#Activity, #Times").keyup(function(event) {
