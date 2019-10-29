@@ -70,7 +70,8 @@ module.exports = function(app) {
   app.get("/habits", function(req, res) {
     db.User.findAll({}).then(function(userHabits) {
       res.render("habits", {
-        userHabits: userHabits
+        userHabits: userHabits,
+        userContext: req.userContext
       });
     });
   });
@@ -85,7 +86,8 @@ module.exports = function(app) {
       ]
     }).then(function(userHabits) {
       res.render("habits", {
-        habits: userHabits[0].Habits
+        habits: userHabits[0].Habits,
+        userContext: req.userContext
       });
 
       console.log(userHabits[0].Habits);
@@ -118,8 +120,9 @@ module.exports = function(app) {
         }
       ]
     }).then(function(userHabits) {
-      res.render("test", {
-        habits: userHabits[0].Habits
+      res.render("reviewGoals", {
+        habits: userHabits[0].Habits,
+        userContext: req.userContext
       });
 
       console.log(userHabits[0].Habits);
@@ -129,7 +132,8 @@ module.exports = function(app) {
   app.get("/test", function(req, res) {
     db.User.findAll({}).then(function(userHabits) {
       res.render("test", {
-        userHabits: userHabits
+        userHabits: userHabits,
+        userContext: req.userContext
       });
     });
   });
@@ -140,7 +144,8 @@ module.exports = function(app) {
       dbExample
     ) {
       res.render("example", {
-        example: dbExample
+        example: dbExample,
+        userContext: req.userContext
       });
     });
   });

@@ -2,6 +2,15 @@ $(document).ready(function() {
   // Delete this once data is being dynamically
   // added to the "users" table:
   var currentUserId = 1;
+
+  function reviewHabits() {
+    if (!isNaN(currentUserId)) {
+      window.location.href = "/review/" + currentUserId;
+    } else {
+      window.location.href = "/test";
+    }
+  }
+
   //$.post("/api/users", { userName: "Steve" });
   $(document).on("click", "#add", function(event) {
     event.preventDefault();
@@ -58,12 +67,20 @@ $(document).ready(function() {
     window.location.reload();
   });
 
-  $(document).on("click", ".habitsEntered", function(event) {
+  $(document).on("click", ".create-button", function(event) {
     if (!isNaN(currentUserId)) {
-      window.location.href = "/review/" + currentUserId;
+      window.location.href = "/create/" + currentUserId;
     } else {
-      window.location.href = "/test";
+      window.location.href = "/habits";
     }
+  });
+
+  $(document).on("click", ".review-button", function(event) {
+    reviewHabits();
+  });
+
+  $(document).on("click", ".habitsEntered", function(event) {
+    reviewHabits();
   });
 
   $("#Activity, #Times").keyup(function(event) {
