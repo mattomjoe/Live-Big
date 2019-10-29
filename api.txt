@@ -1,0 +1,64 @@
+API Call Handle Bars:
+
+Html:
+
+<div id="results">
+
+
+                <table>
+                    <tbody>
+
+                        <script id="reedsearch-template" type="text/html">
+                            <tr>
+                                <th>{{ jobTitle }}</th>
+                                <td>{{ locationName }}</td>
+                                <td>£{{ minimumSalary }} - £{{ maximumSalary }}</td>
+                                <td>{{ jobUrl }}</td>
+                            </tr>
+
+                        </script>
+
+
+                    </tbody>
+
+
+                </table>
+            </div>
+
+Javascript
+            for (var i = 0; i < data.results.length; i++) {
+                var job = data.results[i];
+                var jobHtml = reedsearchTemplate(job);
+                $("#results").append(jobHtml);
+
+                    var reedUrl = "http://www.reed.co.uk/api/1.0/jobs/";
+                    var id = job.jobId
+                    var url = reedUrl + id;
+
+                    $.ajax({
+                        type: "get",
+                        async: true,
+                        url: url,
+                        beforeSend: function(xhr) {
+                            xhr.setRequestHeader("Authorization", "Basic " + btoa("API KEY:"))
+                        },
+                        success: function (data) {
+
+                            console.log(data);
+
+                            var info = data;
+			    var infoHtml = reedsearchTemplate(info);
+			    $("#results").append(infoHtml);
+                        }
+                    });
+
+
+
+            }
+        }
+
+    });
+
+});
+
+
