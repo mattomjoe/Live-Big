@@ -2,17 +2,12 @@ $(document).ready(function() {
   // Delete this once data is being dynamically
   // added to the "users" table:
   var currentUserId = 1;
-
+  $.post("/api/users", { userName: "Steve" });
   $(document).on("click", "#add", function(event) {
     event.preventDefault();
 
-    alert("wee");
-
     var newHabit = {
       habitName: $("#Activity")
-        .val()
-        .trim(),
-      perWeek: $("#Times")
         .val()
         .trim(),
       completed: 0,
@@ -46,13 +41,17 @@ $(document).ready(function() {
     });
   });
 
-  $(document).on("click", ".tablinks", function(event) {
+  $(document).on("click", ".completeHabit", function(event) {
     var id = $(this)
+      .parent()
       .parent()
       .data("id");
 
-    $.ajax("api/habits/" + id, {
-      type: "PUT",
+    console.log(id);
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/habits/" + id,
       data: { completed: 1 }
     });
 
