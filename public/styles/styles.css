@@ -6,6 +6,7 @@ html,
 body {
   height: 100% !important;
   margin: 0;
+  background-image: url("images/mountain-top-1");
 }
 
 .notFooter {
