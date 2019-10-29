@@ -1,27 +1,27 @@
 {
   "development": {
-    "username": "root",
-    "password": "Edith191$1@",
-    "database": "live_bigDB",
-    "host": "localhost",
+    "username": "e9dljvt4jgmm1wkc",
+    "password": "a06yq4hosgdtmnza",
+    "database": "nt2wo95lqmoemucu",
+    "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": "3306",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "root",
-    "database": "testdb",
-    "host": "127.0.0.1",
+    "username": "e9dljvt4jgmm1wkc",
+    "password": "a06yq4hosgdtmnza",
+    "database": "nt2wo95lqmoemucu",
+    "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": "3306",
     "socketPath": "~travis/.my.cnf",
     "dialect": "mysql",
     "logging": false
   },
   "ci": {
-    "username": "root",
-    "password": "root",
-    "database": "testdb",
-    "host": "127.0.0.1",
+    "username": "e9dljvt4jgmm1wkc",
+    "password": "a06yq4hosgdtmnza",
+    "database": "nt2wo95lqmoemucu",
+    "host": "ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "socketPath": "~travis/.my.cnf",
     "dialect": "mysql",
     "logging": false
