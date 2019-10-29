@@ -59,9 +59,10 @@ $(document).ready(function() {
   });
 
   $(document).on("click", ".habitsEntered", function(event) {
-    console.log("wee");
     if (!isNaN(currentUserId)) {
-      window.location.href = "/test/" + currentUserId;
+      window.location.href = "/review/" + currentUserId;
+    } else {
+      window.location.href = "/test";
     }
   });
 
