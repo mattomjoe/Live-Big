@@ -15,12 +15,12 @@ body {
 }
 
 .push {
-  height: 80px;
+  height: 175px;
 }
 
 #sticky-footer {
   height: 80px;
-  background: #363636;
+  background: #363636 !important;
 }
 
 .goalHeading {

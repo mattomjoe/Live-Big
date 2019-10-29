@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Edith191$1@",
+    "password": "root",
     "database": "live_bigDB",
     "host": "localhost",
     "port": "3306",
