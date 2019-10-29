@@ -26,11 +26,16 @@ body {
   font-weight: bolder !important;
 }
 
+.habitReviewTable {
+  background: rgb(53, 53, 53, 0.5) !important;
+}
+
 /* CSS for log-in screen */
 
-.container {
+.backgroundContainer {
   position: relative;
   text-align: center;
+  width: 100%;
   /* color: white; */
 }
 

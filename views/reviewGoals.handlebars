@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-5 habitReviewTable">
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th class="text-left">Incomplete</th>
+                        <th class="text-center">Complete It!</th>
+                    </tr>
+                </thead>
+
+                <tbody id="habits">
+                    {{#each habits}}
+                    {{#unless completed}}
+                    <tr data-id="{{id}}">
+                        <td>{{habitName}}</td>
+                        <td class="text-center"><button class="completeHabit">&#10004;</button></td>
+                    </tr>
+                    {{/unless}}
+                    {{/each}}
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-5 habitReviewTable">
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th class="text-center">Complete</th>
+                    </tr>
+                </thead>
+
+                <tbody id="habits">
+                    {{#each habits}}
+                    {{#if completed}}
+                    <tr data-id="{{id}}">
+                        <td class="text-center">{{habitName}}</td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
