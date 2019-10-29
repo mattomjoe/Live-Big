@@ -41,17 +41,21 @@ $(document).ready(function() {
     });
   });
 
-  $(document).on("click", ".tablinks", function(event) {
+  $(document).on("click", ".completeHabit", function(event) {
     var id = $(this)
+      .parent()
       .parent()
       .data("id");
 
-    $.ajax("api/habits/" + id, {
-      type: "PUT",
+    console.log(id);
+
+    $.ajax({
+      method: "PUT",
+      url: "/api/habits/" + id,
       data: { completed: 1 }
     });
 
-    window.location.reload();
+    //window.location.reload();
   });
 
   $("#Activity, #Times").keyup(function(event) {
