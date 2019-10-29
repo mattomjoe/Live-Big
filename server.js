@@ -34,7 +34,7 @@ const oidc = new ExpressOIDC({
   issuer: `${process.env.OKTA_CLIENT_ORGURL}/oauth2/default`,
   client_id: process.env.OKTA_OAUTH2_CLIENT_ID_WEB,
   client_secret: process.env.OKTA_OAUTH2_CLIENT_SECRET_WEB,
-  redirect_uri: `${process.env}https://theymightbegiants.herokuapp.com/authorization-code/callback`,
+  redirect_uri: `https://theymightbegiants.herokuapp.com/authorization-code/callback`,
   scope: "openid profile"
 });
 
