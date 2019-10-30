@@ -26,10 +26,10 @@ const fields = [
 ];
 
 router.get("/", (req, res) => {
-  console.log(
+  /*console.log(
     "----------------Hey is this you my dude?: ",
     req.userContext.userinfo
-  );
+  );*/
   res.render("register", { fields });
 });
 
