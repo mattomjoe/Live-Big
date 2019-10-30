@@ -67,6 +67,24 @@ module.exports = function(app) {
     //}
   });
 
+  app.get("/register", function(req, res) {
+    console.log("AAAAA", req.userContext);
+    console.log("---------Serving up root from htmlRoutes.js");
+    //console.log("----------Hey is this you my dude?: ",req.userContext.userinfo);
+
+    /*if (req.userContext) {
+      oktaSub = req.userContext.userinfo.sub;
+    }*/
+
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("register", {
+        msg: "Welcome!",
+        examples: dbExamples,
+        userContext: req.userContext
+      });
+    });
+  });
+
   app.get("/habits", function(req, res) {
     db.User.findAll({}).then(function(userHabits) {
       res.render("habits", {
