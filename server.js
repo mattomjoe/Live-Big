@@ -64,9 +64,7 @@ var syncOptions = { force: false };
 app.get("/logout", (req, res) => {
   if (req.userContext) {
     const idToken = req.userContext.tokens.id_token;
-    const to = encodeURI(
-      `${process.env}https://theymightbegiants.herokuapp.com/`
-    );
+    const to = encodeURI(process.env.HOST_URL);
     const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
     req.logout();
     res.redirect(

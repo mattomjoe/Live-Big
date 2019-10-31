@@ -6,7 +6,7 @@ html,
 body {
   height: 100% !important;
   margin: 0;
-  background-image: url("images/mountain-top-1");
+  background-image: url("images/mountain-top.jpg");
 }
 
 .notFooter {
@@ -73,5 +73,5 @@ body {
   cursor: pointer;
 }
 .container {
-  background-image: url("public/images/mountain-top-1.jpg");
+  background-image: url("public/images/mountain-top.jpg");
 }
