@@ -3,6 +3,12 @@ $(document).ready(function() {
   // added to the "users" table:
   var currentUserId = 1;
 
+  if ($(".getUserId").length > 0) {
+    console.log("It is real");
+    console.log("It is " + $(".getUserId").data("id"));
+    currentUserId = $(".getUserId").data("id");
+  }
+
   function reviewHabits() {
     if (!isNaN(currentUserId)) {
       window.location.href = "/review/" + currentUserId;

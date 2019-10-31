@@ -39,7 +39,7 @@ function logUserIn(userName) {
 
 module.exports = function(app) {
   // Load index page
-  var oktaSub = null;
+  // var oktaSub = null;
 
   app.get("/", function(req, res) {
     console.log("AAAAA", req.userContext);
@@ -105,7 +105,8 @@ module.exports = function(app) {
     }).then(function(userHabits) {
       res.render("habits", {
         habits: userHabits[0].Habits,
-        userContext: req.userContext
+        userContext: req.userContext,
+        userId: req.params.id
       });
 
       console.log(userHabits[0].Habits);
@@ -140,7 +141,8 @@ module.exports = function(app) {
     }).then(function(userHabits) {
       res.render("reviewGoals", {
         habits: userHabits[0].Habits,
-        userContext: req.userContext
+        userContext: req.userContext,
+        userId: req.params.id
       });
 
       console.log(userHabits[0].Habits);
