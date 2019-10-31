@@ -1,5 +1,9 @@
 <div class="text-white" class="img-fluid" alt="Responsive image">
+    {{#if userId}}
+    <div id="goalInputs" class="getUserId container px-0" data-id="{{userId}}">
+    {{else}}
     <div id="goalInputs" class="container px-0">
+    {{/if}}
         <div id="goal-div">
             <h1 id="goals" class="text-center pt-4 mb-0" style="font-weight: bolder !important;">SET YOUR GOALS</h1>
         </div>

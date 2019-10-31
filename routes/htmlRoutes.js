@@ -39,7 +39,7 @@ function logUserIn(userName) {
 
 module.exports = function(app) {
   // Load index page
-  var oktaSub = null;
+  // var oktaSub = null;
 
   app.get("/", function(req, res) {
     console.log("AAAAA", req.userContext);
@@ -65,6 +65,21 @@ module.exports = function(app) {
     //console.log("User is " + oktaSub);
     //}
     //}
+  });
+
+  // Logout route
+  app.get("/logout", (req, res) => {
+    if (req.userContext) {
+      const idToken = req.userContext.tokens.id_token;
+      const to = encodeURI(process.env.HOST_URL);
+      const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
+      req.logout();
+      res.redirect(
+        `${process.env.OKTA_CLIENT_ORGURL}/oauth2/default/v1/logout?${params}`
+      );
+    } else {
+      res.redirect("/");
+    }
   });
 
   app.get("/register", function(req, res) {
@@ -105,7 +120,8 @@ module.exports = function(app) {
     }).then(function(userHabits) {
       res.render("habits", {
         habits: userHabits[0].Habits,
-        userContext: req.userContext
+        userContext: req.userContext,
+        userId: req.params.id
       });
 
       console.log(userHabits[0].Habits);
@@ -140,7 +156,8 @@ module.exports = function(app) {
     }).then(function(userHabits) {
       res.render("reviewGoals", {
         habits: userHabits[0].Habits,
-        userContext: req.userContext
+        userContext: req.userContext,
+        userId: req.params.id
       });
 
       console.log(userHabits[0].Habits);
