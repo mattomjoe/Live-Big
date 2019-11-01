@@ -68,9 +68,9 @@ $(document).ready(function() {
       method: "PUT",
       url: "/api/habits/" + id,
       data: { completed: 1 }
+    }).then(function() {
+      window.location.reload();
     });
-
-    window.location.reload();
   });
 
   $(document).on("click", ".create-button", function(event) {
